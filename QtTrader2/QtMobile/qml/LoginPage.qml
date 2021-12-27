@@ -139,7 +139,7 @@ Item {
                 height: g_ViewInfo.getButtonHeight() - 3
                 color: "white"
 
-                TextEdit{
+                TextInput{
                     id:login_UserName_TextEdit
                     anchors.centerIn: parent
                     width: parent.width
@@ -169,14 +169,16 @@ Item {
                 GradientStop { position: 1.0; color: "#4a6b64" }
             }
 
-            TextEdit{
+            TextInput{
                 id:login_Password_TextEdit
                 anchors.top: parent.top
                 anchors.left: parent.left
                 width: parent.width
                 height: g_ViewInfo.getButtonHeight()
                 //color: "#ffffff"
-                text: "12345678"
+                selectByMouse: true
+                echoMode: TextInput.Password
+                passwordCharacter: 50
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
             }
