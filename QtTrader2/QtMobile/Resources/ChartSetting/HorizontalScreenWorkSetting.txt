@@ -1,0 +1,34 @@
+﻿<HistoricalChart>
+ <CommonSettings isAutoScroll="1" isShiftData="0" isShowExecutedOrder="0" isShowPendingOrder="0" background="#ffffff" isShowGrid="1" isShowCrosshair="1" isShowQuickPlacer="0" foreground="#000000" isShowLableInfo="0" gridColor="#a0a0a4" zoomLevel="1"/>
+ <PriceSettings bullCandleColor="#00ff00" barUpColor="#00ff00" pendingOrderLineColor="#008000" volumesColor="#00ff00" isShowBidPriceLine="1" isShowVolume="1" bidLineColor="#008000" crossStarColor="#00ff00" bearCandleColor="#ff0000" lineChartColor="#a0a0a4" isShowAskPriceLine="1" askLineColor="#ff0000" drawType="2" barDownColor="#00ff00" openOrderLineColor="#808000"/>
+ <currentInstrument hasVolume="0" key="a5d23dcc-592f-4964-9740-a0e2a62ce710" description="现货黄金"/>
+ <currentQuotePolicy key="4c1dba2d-6007-4df3-93cd-6cf61afd0332" description="WF_5 标准"/>
+ <currentFrequency unit="1" type="2"/>
+ <PricePanel heightRatio="0.5">
+  <Indicators>
+   <Indicator arrayNum="1" maType="1" strInfo="移动平均线(MovingAverages)(5)" dependency="1" plotNum="1" type="2" isInPriceChart="1">
+    <inputIntData key="Period" value="5"/>
+    <drawInfo lineType="1" lineColor="#434ccc" lineWidth="1.5" lineName="OutReal" drawType="2"/>
+   </Indicator>
+   <Indicator arrayNum="1" maType="1" strInfo="移动平均线(MovingAverages)(10)" dependency="1" plotNum="1" type="2" isInPriceChart="1">
+    <inputIntData key="Period" value="10"/>
+    <drawInfo lineType="1" lineColor="#cb60bb" lineWidth="1.5" lineName="OutReal" drawType="2"/>
+   </Indicator>
+   <Indicator arrayNum="1" maType="1" strInfo="移动平均线(MovingAverages)(20)" dependency="1" plotNum="1" type="2" isInPriceChart="1">
+    <inputIntData key="Period" value="20"/>
+    <drawInfo lineType="1" lineColor="#33b933" lineWidth="1.5" lineName="OutReal" drawType="2"/>
+   </Indicator>
+  </Indicators>
+ </PricePanel>
+ <IndicatorPanel heightRatio="0.5">
+  <Indicators>
+   <Indicator arrayNum="3" maType="7" strInfo="移动平均汇聚背驰指标(MACD)(26)(9)(12)" dependency="1" plotNum="2" type="15" isInPriceChart="0">
+    <inputIntData key="Slow EMA" value="26"/>
+    <inputIntData key="MACD SMA" value="9"/>
+    <inputIntData key="Fast EMA" value="12"/>
+    <drawInfo lineType="1" lineColor="#0000ff" lineWidth="1.5" lineName="Main" drawType="1"/>
+    <drawInfo lineType="1" lineColor="#ff0000" lineWidth="1.5" lineName="Signal" drawType="2"/>
+   </Indicator>
+  </Indicators>
+ </IndicatorPanel>
+</HistoricalChart>

@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<configuration>
+  <Merchant IsPrivate="true" MerchantCode="811834"/>
+  <!--multi Merchant -->
+  <!--<Merchant IsPrivate="false" MerchantCode=""/>-->
+  <WeChat WXAPPID="wx1b38b9c7037a66ab" TemplateCode="Demo"/>
+  <!--<WeChat WXAPPID="wx1b38b9c7037a66ab" TemplateCode="TEST"/>-->
+</configuration>

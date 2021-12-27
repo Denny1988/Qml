@@ -1,0 +1,151 @@
+*{
+    color:Black;
+    background-color:White;
+}
+
+
+/**************** Title Bar style ******************/
+QFrame#TitleBarMenu
+{ 
+    background-color:#496963;
+    color: White;
+}
+
+QLabel#TitleBarMenu_TitleLabel 
+{ 
+    background-color: #496963;
+    color: White;
+    font-weight: bold;
+}
+
+QLabel#TitleBarMenu_LineLabel
+{
+    background-color: Orangered;
+}
+
+QToolButton#TitleBarMenu_SettingMenuButton
+{
+    background-color: #496963;
+    border:none;
+    border-radius: 0px;
+    color: White;
+}
+
+QToolButton#TitleBarMenu_GoBackMenuButton
+{
+    background-color: #496963;
+    border:none;
+    border-radius: 0px;
+    color: White;
+}
+
+
+/**************** Quotation style ******************/
+QWidget#QuotationMainPage
+{ 
+    background-color: white;
+    color: black;
+    font-size:14pt;
+}
+
+QWidget#HeaderWidget {  background-color: #cfcfcf;  }
+
+QListWidget#QuotationListWidget {  background-color: #cfcfcf; border: 0px; }
+
+QWidget#QuotationItemWidget
+{
+    background-color: #cfcfcf;
+    color: Black;
+    font-size:14pt;
+}
+
+QGroupBox#Content_GroupBox 
+{ 
+    color:Black;
+    background-color:White;
+    font-size:14pt;
+    border: 0px solid black;
+    border-radius: 10px;
+} 
+
+QLabel#InstrumentCode_Label 
+{
+    font-size:20pt;
+    color:Black;
+    background-color: transparent;
+    border:0px;
+    margin-left:1px;
+}
+
+QWidget#InstrumentInfo_Widget { background-color: transparent;  border:0px; }
+
+QWidget#AskBid_Widget{ background-color: transparent;  border:0px; }
+
+QWidget#Market_Widget { background-color: transparent;  border:0px; }
+
+QLabel#Sell_Label{ background-color: transparent;  border:0px; margin-left:5px; }
+
+QLabel#Time_Label{ background-color: transparent;  border:0px; }
+
+QLabel#BidPrice_Label { font-size:24pt; background-color: transparent;  border:0px;}
+
+QLabel#AskPrice_Label { font-size:24pt; background-color: transparent;  border:0px;}
+
+QLabel#Buy_Label{ background-color: transparent;  border:0px; margin-left:5px; }
+
+#Vertical_Line { color: #efefef; }
+
+QToolButton#LeftMarketInfoTitle_ToolButton { background-color: transparent;  border:0px; }
+
+QLabel#LeftMarketInfoValue_Label{ background-color: transparent;  border:0px; }
+
+QToolButton#RightMarketInfoTitle_ToolButton { background-color: transparent;  border:0px; }
+
+QLabel#RightMarketInfoValue_Label{ background-color: transparent;  border:0px;}
+
+
+/**************** Account style ******************/
+QGroupBox#Tool_GroupBox{
+    border: 1px solid Black;
+    border-top:0px;
+    border-left:0px;
+    border-right:0px;
+}
+
+QLabel#FundStatus_Label { Color:#ff5d27; }
+
+QPushButton#Logout_Button{
+    background-color: #818181;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+QPushButton#LoginOrAccountOpening_Button{
+    background-color: #818181;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+/**************** Report style ******************/
+QGroupBox#RPT_TypeGroupBox{ border: 0px;}
+
+QGroupBox#RPT_FromGroupBox{ border: 0px;}
+
+QGroupBox#RPT_ToGroupBox{ border: 0px;}
+
+QGroupBox#RPT_TimeChangeGroupBox{ border: 0px;}
+
+QGroupBox#RPT_DeliveryGroupBox{ border: 0px;}
+
+QToolButton#RPT_FromDateButton{ border: 1px solid #a2a2a2; border-radius: 5px;}
+
+QToolButton#RPT_ToDateButton{ border: 1px solid #a2a2a2; border-radius: 5px;}
+
+QToolButton#RPT_DeliveryButton{ border: 1px solid #a2a2a2; border-radius: 5px;}
+
+QToolButton#RPT_SubmitButton{ border: 1px solid #a2a2a2;border-radius: 10px;background-color: #ff5d27;color: #ffffff;}
+
+
+/**************** StyleSetting style ******************/
+QToolButton#Theme_Button{ border: 1px solid #a2a2a2; border-radius: 5px;}
+

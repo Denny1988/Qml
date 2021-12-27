@@ -1,0 +1,614 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B12702AD-ABFB-343A-A199-8E24837244A3}</ProjectGuid>
+    <Keyword>Qt4VSv1.0</Keyword>
+    <SccProjectName>SAK</SccProjectName>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccProvider>SAK</SccProvider>
+    <WindowsTargetPlatformVersion>1.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v140_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140_xp</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>11.0.50727.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>UNICODE;WIN32;WIN64;RUNTIME_OS_WIN32;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;HISTORICALCHART_LIB;QT_XML_LIB;QT_CONCURRENT_LIB;BUILD_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtWidgets;..\TA-SDK;..\QtFramework;.\TA-Lib\include;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtConcurrent;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories>..\Win32\Debug;.\TA-Lib\lib;$(QTDIR)\lib;..\..\Chart\TA-SDK\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>qtmaind.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5Widgetsd.lib;Qt5Xmld.lib;QtFramework.lib;TA-SDK.lib;Qt5Concurrentd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>UNICODE;WIN32;WIN64;RUNTIME_OS_WIN32;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;HISTORICALCHART_LIB;QT_XML_LIB;QT_CONCURRENT_LIB;BUILD_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtWidgets;..\TA-SDK;..\QtFramework;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtConcurrent;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories>..\Win32\Release;$(QTDIR)\lib;..\..\iExchange.Trader\Win32\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>qtmain.lib;Qt5Core.lib;Qt5Gui.lib;Qt5Widgets.lib;Qt5Xml.lib;QtFramework.lib;TA-SDK.lib;Qt5Concurrent.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="BORealTimeChart.cpp" />
+    <ClCompile Include="BORealtimeDataSource.cpp" />
+    <ClCompile Include="BORealTimeDialog.cpp" />
+    <ClCompile Include="DrawingChannel.cpp" />
+    <ClCompile Include="IndicatorListDialog.cpp" />
+    <ClCompile Include="Indicator\AccumulativeSwingIndex.cpp" />
+    <ClCompile Include="Indicator\Aroon.cpp" />
+    <ClCompile Include="Indicator\AroonOscillator.cpp" />
+    <ClCompile Include="BaseData.cpp" />
+    <ClCompile Include="BaseDrawing.cpp" />
+    <ClCompile Include="Indicator\BollingerBands.cpp" />
+    <ClCompile Include="Calculator.cpp" />
+    <ClCompile Include="Indicator\ChaikinMoneyFlow.cpp" />
+    <ClCompile Include="Indicator\ChaikinVolatility.cpp" />
+    <ClCompile Include="Indicator\ChandeMomentumOscillator.cpp" />
+    <ClCompile Include="Indicator\CommodityChannelIndex.cpp" />
+    <ClCompile Include="Crosshair.cpp" />
+    <ClCompile Include="CursorPosition.cpp" />
+    <ClCompile Include="Fibbo.cpp" />
+    <ClCompile Include="Indicator\DetrendedPriceOscillator.cpp" />
+    <ClCompile Include="Indicator\EaseOfMovement.cpp" />
+    <ClCompile Include="Indicator\FractalChaosBands.cpp" />
+    <ClCompile Include="Indicator\FractalChaosOscillator.cpp" />
+    <ClCompile Include="Indicator\HighLowBands.cpp" />
+    <ClCompile Include="Indicator\HighMinusLow.cpp" />
+    <ClCompile Include="Indicator\LinearRegressionForecast.cpp" />
+    <ClCompile Include="Indicator\IndicatorCore.cpp" />
+    <ClCompile Include="Indicator\LinearRegressionRSquared.cpp" />
+    <ClCompile Include="Indicator\MassIndex.cpp" />
+    <ClCompile Include="Indicator\MoneyFlowIndex.cpp" />
+    <ClCompile Include="Indicator\MovingAverageEnvelope.cpp" />
+    <ClCompile Include="Indicator\NegativeVolumeIndex.cpp" />
+    <ClCompile Include="Indicator\OnBalanceVolume.cpp" />
+    <ClCompile Include="Indicator\PerformanceIndex.cpp" />
+    <ClCompile Include="Indicator\PositiveVolumeIndex.cpp" />
+    <ClCompile Include="Indicator\PriceOscillator.cpp" />
+    <ClCompile Include="Indicator\PriceROC.cpp" />
+    <ClCompile Include="Indicator\PriceVolumeTrend.cpp" />
+    <ClCompile Include="Indicator\RainbowOscillator.cpp" />
+    <ClCompile Include="Indicator\SwingIndex.cpp" />
+    <ClCompile Include="Indicator\TradeVolumeIndex.cpp" />
+    <ClCompile Include="Indicator\VerticalHorizontalFilter.cpp" />
+    <ClCompile Include="Indicator\VIDYA.cpp" />
+    <ClCompile Include="Indicator\VolumeOscillator.cpp" />
+    <ClCompile Include="Indicator\VolumeROC.cpp" />
+    <ClCompile Include="Indicator\WeightedClose.cpp" />
+    <ClCompile Include="Indicator\WellesWilderSmoothing.cpp" />
+    <ClCompile Include="Indicator\WilliamsAccumulationDistribution.cpp" />
+    <ClCompile Include="DrawingObjectListDialog.cpp" />
+    <ClCompile Include="DrawingObjectsModel.cpp" />
+    <ClCompile Include="DrawingText.cpp" />
+    <ClCompile Include="PriceAlert\AlertHintLine.cpp" />
+    <ClCompile Include="SC.cpp" />
+    <ClCompile Include="TradeHelper\HintLine.cpp" />
+    <ClCompile Include="HistoricalDataSource.cpp" />
+    <ClCompile Include="Indicator\Indicator.cpp" />
+    <ClCompile Include="ChartPanel.cpp" />
+    <ClCompile Include="IndicatorDialog.cpp" />
+    <ClCompile Include="Helper.cpp" />
+    <ClCompile Include="IndicatorPanel.cpp" />
+    <ClCompile Include="InfoLabel.cpp" />
+    <ClCompile Include="Indicator\LinearRegressionIntercept.cpp" />
+    <ClCompile Include="Indicator\LinearRegressionSlope.cpp" />
+    <ClCompile Include="DrawingEllipse.cpp" />
+    <ClCompile Include="DrawingObjectDialog.cpp" />
+    <ClCompile Include="DrawingRect.cpp" />
+    <ClCompile Include="DrawingTrend.cpp" />
+    <ClCompile Include="DrawingTriangle.cpp" />
+    <ClCompile Include="DrawingVertical.cpp" />
+    <ClCompile Include="Indicator\MACD.cpp" />
+    <ClCompile Include="Indicator\Median.cpp" />
+    <ClCompile Include="Indicator\MomentumOscillator.cpp" />
+    <ClCompile Include="Indicator\MovingAverages.cpp" />
+    <ClCompile Include="NodeControl.cpp" />
+    <ClCompile Include="DrawingHorizontal.cpp" />
+    <ClCompile Include="MainPainterPanel.cpp" />
+    <ClCompile Include="PriceAlert\AlertLine.cpp" />
+    <ClCompile Include="PriceAlert\PriceAlertAdapter.cpp" />
+    <ClCompile Include="ToolBar.cpp" />
+    <ClCompile Include="TradeHelper\OrderLine.cpp" />
+    <ClCompile Include="Indicator\ParabolicSAR.cpp" />
+    <ClCompile Include="PriceDialog.cpp" />
+    <ClCompile Include="QuickModifier.cpp" />
+    <ClCompile Include="RealTimeChart.cpp" />
+    <ClCompile Include="RealtimeDataSource.cpp" />
+    <ClCompile Include="RealTimeDialog.cpp" />
+    <ClCompile Include="Indicator\RelativeStrengthIndex.cpp" />
+    <ClCompile Include="Settings.cpp" />
+    <ClCompile Include="Instrument.cpp" />
+    <ClCompile Include="PricePanel.cpp" />
+    <ClCompile Include="Common.cpp" />
+    <ClCompile Include="Config.cpp" />
+    <ClCompile Include="DataSource.cpp" />
+    <ClCompile Include="historicalchart.cpp" />
+    <ClCompile Include="PriceStyle.cpp" />
+    <ClCompile Include="RandomDataSource.cpp" />
+    <ClCompile Include="SplitPanel.cpp" />
+    <ClCompile Include="SR.cpp" />
+    <ClCompile Include="Indicator\StandardDeviation.cpp" />
+    <ClCompile Include="Indicator\StochasticOscillator.cpp" />
+    <ClCompile Include="SystemTime.cpp" />
+    <ClCompile Include="TemplateSaveDialog.cpp" />
+    <ClCompile Include="Template\TemplateManager.cpp" />
+    <ClCompile Include="QuickPlacer.cpp" />
+    <ClCompile Include="TradeHelper\OrderLineManager.cpp" />
+    <ClCompile Include="TradeHelper\TradeHelper.cpp" />
+    <ClCompile Include="Indicator\TRIX.cpp" />
+    <ClCompile Include="Indicator\TrueRange.cpp" />
+    <ClCompile Include="Indicator\TypicalPrice.cpp" />
+    <ClCompile Include="Indicator\UltimateOscillator.cpp" />
+    <ClCompile Include="Indicator\WilliamsR.cpp" />
+    <ClCompile Include="XCoorPanel.cpp" />
+    <ClCompile Include="YCoorPanel.cpp" />
+    <ClCompile Include="ZoomController.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="IndicatorListDialog.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing IndicatorListDialog.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I.\TA-Lib\include" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing IndicatorListDialog.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+    </CustomBuild>
+    <CustomBuild Include="BORealTimeChart.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing BORealTimeChart.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I.\TA-Lib\include" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing BORealTimeChart.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+    </CustomBuild>
+    <CustomBuild Include="BORealtimeDataSource.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing BORealtimeDataSource.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I.\TA-Lib\include" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing BORealtimeDataSource.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+    </CustomBuild>
+    <CustomBuild Include="BORealTimeDialog.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing BORealTimeDialog.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I.\TA-Lib\include" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing BORealTimeDialog.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+    </CustomBuild>
+    <ClInclude Include="DrawingChannel.h" />
+    <ClInclude Include="Indicator\AccumulativeSwingIndex.h" />
+    <ClInclude Include="Indicator\Aroon.h" />
+    <ClInclude Include="Indicator\AroonOscillator.h" />
+    <ClInclude Include="AsyncCallback.h" />
+    <ClInclude Include="BaseData.h" />
+    <ClInclude Include="Indicator\BollingerBands.h" />
+    <ClInclude Include="Calculator.h" />
+    <ClInclude Include="Indicator\ChaikinMoneyFlow.h" />
+    <ClInclude Include="Indicator\ChaikinVolatility.h" />
+    <ClInclude Include="Indicator\ChandeMomentumOscillator.h" />
+    <ClInclude Include="Indicator\CommodityChannelIndex.h" />
+    <ClInclude Include="Crosshair.h" />
+    <ClInclude Include="CursorPosition.h" />
+    <ClInclude Include="Cursors.h" />
+    <ClInclude Include="Fibbo.h" />
+    <ClInclude Include="Indicator\DetrendedPriceOscillator.h" />
+    <ClInclude Include="Indicator\EaseOfMovement.h" />
+    <ClInclude Include="Indicator\FractalChaosBands.h" />
+    <ClInclude Include="Indicator\FractalChaosOscillator.h" />
+    <ClInclude Include="Indicator\HighLowBands.h" />
+    <ClInclude Include="Indicator\HighMinusLow.h" />
+    <ClInclude Include="Indicator\LinearRegressionForecast.h" />
+    <ClInclude Include="Indicator\IndicatorCore.h" />
+    <ClInclude Include="Indicator\LinearRegressionRSquared.h" />
+    <ClInclude Include="Indicator\MassIndex.h" />
+    <ClInclude Include="Indicator\MoneyFlowIndex.h" />
+    <ClInclude Include="Indicator\MovingAverageEnvelope.h" />
+    <ClInclude Include="Indicator\NegativeVolumeIndex.h" />
+    <ClInclude Include="Indicator\OnBalanceVolume.h" />
+    <ClInclude Include="Indicator\PerformanceIndex.h" />
+    <ClInclude Include="Indicator\PositiveVolumeIndex.h" />
+    <ClInclude Include="Indicator\PriceOscillator.h" />
+    <ClInclude Include="Indicator\PriceROC.h" />
+    <ClInclude Include="Indicator\PriceVolumeTrend.h" />
+    <ClInclude Include="Indicator\RainbowOscillator.h" />
+    <ClInclude Include="Indicator\SwingIndex.h" />
+    <ClInclude Include="Indicator\TradeVolumeIndex.h" />
+    <ClInclude Include="Indicator\VerticalHorizontalFilter.h" />
+    <ClInclude Include="Indicator\VIDYA.h" />
+    <ClInclude Include="Indicator\VolumeOscillator.h" />
+    <ClInclude Include="Indicator\VolumeROC.h" />
+    <ClInclude Include="Indicator\WeightedClose.h" />
+    <ClInclude Include="Indicator\WellesWilderSmoothing.h" />
+    <ClInclude Include="Indicator\WilliamsAccumulationDistribution.h" />
+    <CustomBuild Include="DrawingObjectListDialog.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing DrawingObjectListDialog.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I.\TA-Lib\include" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing DrawingObjectListDialog.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+    </CustomBuild>
+    <ClInclude Include="DrawingObjectsModel.h" />
+    <ClInclude Include="DrawingText.h" />
+    <ClInclude Include="PriceAlert\AlertHintLine.h" />
+    <ClInclude Include="SC.h" />
+    <ClInclude Include="TradeHelper\HintLine.h" />
+    <ClInclude Include="InfoLabel.h" />
+    <ClInclude Include="PriceAlert\AlertLine.h" />
+    <CustomBuild Include="PriceAlert\PriceAlertAdapter.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing PriceAlertAdapter.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I.\TA-Lib\include" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing PriceAlertAdapter.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+    </CustomBuild>
+    <ClInclude Include="TradeHelper\OrderLine.h" />
+    <CustomBuild Include="Template\TemplateManager.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing TemplateManager.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I.\TA-Lib\include" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing TemplateManager.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+    </CustomBuild>
+    <ClInclude Include="QuickModifier.h" />
+    <ClInclude Include="QuickPlacer.h" />
+    <CustomBuild Include="TradeHelper\TradeHelper.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing TradeHelper.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I.\TA-Lib\include" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing TradeHelper.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+    </CustomBuild>
+    <CustomBuild Include="TemplateSaveDialog.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing TemplateSaveDialog.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I.\TA-Lib\include" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing TemplateSaveDialog.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+    </CustomBuild>
+    <ClInclude Include="TradeHelper\OrderLineManager.h" />
+    <ClInclude Include="ZoomController.h" />
+    <CustomBuild Include="HistoricalDataSource.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing HistoricalDataSource.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I.\TA-Lib\include" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing HistoricalDataSource.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+    </CustomBuild>
+    <ClInclude Include="Indicator\Indicator.h" />
+    <ClInclude Include="Helper.h" />
+    <ClInclude Include="Indicator\LinearRegressionIntercept.h" />
+    <ClInclude Include="Indicator\LinearRegressionSlope.h" />
+    <ClInclude Include="DrawingEllipse.h" />
+    <ClInclude Include="DrawingRect.h" />
+    <ClInclude Include="DrawingTrend.h" />
+    <ClInclude Include="DrawingTriangle.h" />
+    <ClInclude Include="DrawingVertical.h" />
+    <CustomBuild Include="RealtimeDataSource.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing RealtimeDataSource.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I.\TA-Lib\include" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing RealtimeDataSource.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+    </CustomBuild>
+    <ClInclude Include="Indicator\MACD.h" />
+    <ClInclude Include="Indicator\Median.h" />
+    <ClInclude Include="Indicator\MomentumOscillator.h" />
+    <ClInclude Include="Indicator\MovingAverages.h" />
+    <ClInclude Include="Indicator\ParabolicSAR.h" />
+    <ClInclude Include="Indicator\RelativeStrengthIndex.h" />
+    <ClInclude Include="SR.h" />
+    <ClInclude Include="Indicator\StandardDeviation.h" />
+    <ClInclude Include="Indicator\StochasticOscillator.h" />
+    <ClInclude Include="SystemTime.h" />
+    <ClInclude Include="Indicator\TRIX.h" />
+    <ClInclude Include="Indicator\TrueRange.h" />
+    <ClInclude Include="Indicator\TypicalPrice.h" />
+    <ClInclude Include="Indicator\UltimateOscillator.h" />
+    <ClInclude Include="Indicator\WilliamsR.h" />
+    <ClInclude Include="YCoorPanel.h" />
+    <CustomBuild Include="BaseDrawing.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </Command>
+    </CustomBuild>
+    <CustomBuild Include="IndicatorPanel.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing IndicatorPanel.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I.\TA-Lib\include" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing IndicatorPanel.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="priceDialog.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing priceDialog.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I.\TA-Lib\include" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing priceDialog.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+    </CustomBuild>
+    <CustomBuild Include="IndicatorDialog.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing IndicatorDialog.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I.\TA-Lib\include" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing IndicatorDialog.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+    </CustomBuild>
+    <CustomBuild Include="RealTimeChart.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing RealTimeChart.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I.\TA-Lib\include" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing RealTimeChart.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+    </CustomBuild>
+    <CustomBuild Include="DrawingObjectDialog.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing DrawingObjectDialog.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I.\TA-Lib\include" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing DrawingObjectDialog.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+    </CustomBuild>
+    <ClInclude Include="NodeControl.h" />
+    <ClInclude Include="DrawingHorizontal.h" />
+    <ClInclude Include="MainPainterPanel.h" />
+    <CustomBuild Include="RealTimeDialog.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing RealTimeDialog.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I.\TA-Lib\include" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing RealTimeDialog.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+    </CustomBuild>
+    <ClInclude Include="Settings.h" />
+    <ClInclude Include="TA-Lib\include\ta_abstract.h" />
+    <ClInclude Include="TA-Lib\include\ta_common.h" />
+    <ClInclude Include="TA-Lib\include\ta_defs.h" />
+    <ClInclude Include="TA-Lib\include\ta_func.h" />
+    <ClInclude Include="TA-Lib\include\ta_libc.h" />
+    <ClInclude Include="ToolBar.h" />
+    <CustomBuild Include="ChartPanel.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing ChartPanel.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I.\TA-Lib\include" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing ChartPanel.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <ClInclude Include="Instrument.h" />
+    <CustomBuild Include="PricePanel.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing PricePanel.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I.\TA-Lib\include" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing PricePanel.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+    </CustomBuild>
+    <ClInclude Include="Common.h" />
+    <CustomBuild Include="historicalchart.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing historicalchart.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I.\TA-Lib\include" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing historicalchart.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+    </CustomBuild>
+    <ClInclude Include="Config.h" />
+    <CustomBuild Include="DataSource.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);$(QTDIR)\bin\moc.exe;%(FullPath);$(QTDIR)\bin\moc.exe;%(FullPath);$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing DataSource.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I.\TA-Lib\include" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);$(QTDIR)\bin\moc.exe;%(FullPath);$(QTDIR)\bin\moc.exe;%(FullPath);$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing DataSource.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+    </CustomBuild>
+    <ClInclude Include="historicalchart_global.h" />
+    <CustomBuild Include="RandomDataSource.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing RandomDataSource.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I.\TA-Lib\include" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing RandomDataSource.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DRUNTIME_OS_WIN32 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DHISTORICALCHART_LIB -DQT_XML_LIB -DQT_CONCURRENT_LIB -DBUILD_DLL -D%(PreprocessorDefinitions)  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I.\..\TA-SDK" "-I.\..\QtFramework" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtConcurrent"</Command>
+    </CustomBuild>
+    <ClInclude Include="JulianDate.h" />
+    <ClInclude Include="PriceStyle.h" />
+    <ClInclude Include="SplitPanel.h" />
+    <ClInclude Include="XCoorPanel.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </Command>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="priceDialog.ui">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="TA-Lib\lib\ta_libc_cdd.lib" />
+    <Library Include="TA-Lib\lib\ta_libc_cmr.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="realTimeDialog.ui">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="DrawingObjectDialog.ui">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="BORealTimeDialog.ui">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+    </CustomBuild>
+    <None Include="ChartSR\CHS.json" />
+    <None Include="ChartSR\CHT.json" />
+    <None Include="ChartSR\ENG.json" />
+    <None Include="Images\gridline.png">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties MocDir=".\GeneratedFiles\$(ConfigurationName)" UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" lupdateOptions="" lupdateOnBuild="0" lreleaseOptions="" Qt5Version_x0020_Win32="$(DefaultQtVersion)" MocOptions="" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

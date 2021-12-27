@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Themes>
+  <Theme Name="BlackTheme" FileName="Black.qss" ColorFileName="BlackViewItemColor.xml" IsSelected ="true">
+     <Language ENG="Black" CHS="黑底" CHT="黑底"/>
+  </Theme>
+  <Theme Name="WhiteTheme" FileName="White.qss"  ColorFileName="WhiteViewItemColor.xml" IsSelected ="false">
+     <Language ENG="White" CHS="白底" CHT="白底"/>
+  </Theme>
+</Themes>

@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>338</width>
+    <height>523</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>20</y>
+     <width>321</width>
+     <height>491</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_10">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="CommonTable">
+       <property name="cursor">
+        <cursorShape>ArrowCursor</cursorShape>
+       </property>
+       <attribute name="title">
+        <string>Common</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_8">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_7">
+          <item>
+           <widget class="QGroupBox" name="groupBox">
+            <property name="title">
+             <string/>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_4">
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_3">
+               <item>
+                <widget class="QRadioButton" name="candlesticksButton">
+                 <property name="text">
+                  <string>Candlesticks</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QRadioButton" name="lineChartButton">
+                 <property name="text">
+                  <string>Line chart</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QRadioButton" name="barButton">
+                 <property name="text">
+                  <string>Bar chart</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBox_2">
+            <property name="title">
+             <string/>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_5">
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_2">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_2">
+                 <item>
+                  <widget class="QCheckBox" name="autoScrollCheckBox">
+                   <property name="text">
+                    <string>Auto Scroll</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="chartShiftCheckBox">
+                   <property name="text">
+                    <string>Shift Chart</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer_2">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Fixed</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>60</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,2">
+                 <item>
+                  <widget class="QSlider" name="scaleSlider">
+                   <property name="cursor">
+                    <cursorShape>OpenHandCursor</cursorShape>
+                   </property>
+                   <property name="value">
+                    <number>50</number>
+                   </property>
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="tickInterval">
+                    <number>0</number>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="scaleLabel">
+                   <property name="text">
+                    <string>Scale</string>
+                   </property>
+                   <property name="buddy">
+                    <cstring>scaleSlider</cstring>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>148</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBox_3">
+            <property name="title">
+             <string/>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_6">
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout">
+               <item>
+                <widget class="QCheckBox" name="showGridCheckBox">
+                 <property name="text">
+                  <string>Show grid</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="showLableInfoCheckBox">
+                 <property name="text">
+                  <string>show Info label</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="showVolumeCheckBox">
+                 <property name="text">
+                  <string>Show volume</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="showBidLineCheckBox">
+                 <property name="text">
+                  <string>Show  bid  Line</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="showAskLinecheckBox">
+                 <property name="text">
+                  <string>Show ask Line</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="ColorsTable">
+       <attribute name="title">
+        <string>Colors</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget1">
+        <property name="geometry">
+         <rect>
+          <x>13</x>
+          <y>13</y>
+          <width>281</width>
+          <height>401</height>
+         </rect>
+        </property>
+        <layout class="QGridLayout" name="gridLayout" columnstretch="0,0">
+         <item row="12" column="1">
+          <widget class="QComboBox" name="openOrderColorBox"/>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="backgroundLabel">
+           <property name="text">
+            <string>Background:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="13" column="0">
+          <widget class="QLabel" name="pendingOrderLabel">
+           <property name="text">
+            <string>Pending Order:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="10" column="0">
+          <widget class="QLabel" name="bidLineLabel">
+           <property name="text">
+            <string>bid line:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="10" column="1">
+          <widget class="QComboBox" name="bidLineColorBox"/>
+         </item>
+         <item row="12" column="0">
+          <widget class="QLabel" name="openOrderLabel">
+           <property name="text">
+            <string>Open Order:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="11" column="0">
+          <widget class="QLabel" name="askLineLabel">
+           <property name="text">
+            <string>ask line</string>
+           </property>
+          </widget>
+         </item>
+         <item row="11" column="1">
+          <widget class="QComboBox" name="askLineColorBox"/>
+         </item>
+         <item row="9" column="1">
+          <widget class="QComboBox" name="volumesColorBox"/>
+         </item>
+         <item row="7" column="1">
+          <widget class="QComboBox" name="crossStarColorBox"/>
+         </item>
+         <item row="13" column="1">
+          <widget class="QComboBox" name="pendingOrderColorBox"/>
+         </item>
+         <item row="7" column="0">
+          <widget class="QLabel" name="crossStarLabel">
+           <property name="text">
+            <string>Cross Star:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="0">
+          <widget class="QLabel" name="volumeLabel">
+           <property name="text">
+            <string>Volumes:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QComboBox" name="foregroundColorBox"/>
+         </item>
+         <item row="6" column="0">
+          <widget class="QLabel" name="bearCandleLabel">
+           <property name="text">
+            <string>Bear candle:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QComboBox" name="backgroundColorBox"/>
+         </item>
+         <item row="6" column="1">
+          <widget class="QComboBox" name="bearCandleColorBox"/>
+         </item>
+         <item row="5" column="1">
+          <widget class="QComboBox" name="bullCandleColorBox"/>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="bullCandleLabel">
+           <property name="text">
+            <string>Bull candle:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="barDownLabel">
+           <property name="text">
+            <string>Bar down:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="barUpLabel">
+           <property name="text">
+            <string>Bar up:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="0">
+          <widget class="QLabel" name="lineChartLabel">
+           <property name="text">
+            <string>Line chart:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QComboBox" name="barUpColorBox"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="gridLabel">
+           <property name="text">
+            <string>Grid:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QComboBox" name="barDownColorBox"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="foregroundLabel">
+           <property name="text">
+            <string>Foreground:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="1">
+          <widget class="QComboBox" name="lineChartColorBox"/>
+         </item>
+         <item row="2" column="1">
+          <widget class="QComboBox" name="gridColorBox"/>
+         </item>
+         <item row="14" column="0">
+          <widget class="QLabel" name="productCodeLabel">
+           <property name="text">
+            <string>Product code</string>
+           </property>
+          </widget>
+         </item>
+         <item row="14" column="1">
+          <widget class="QComboBox" name="productCodeComboBox"/>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout">
+      <property name="spacing">
+       <number>6</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <spacer>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>131</width>
+          <height>31</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="okButton">
+        <property name="text">
+         <string>OK</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="cancelButton">
+        <property name="text">
+         <string>Cancel</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>okButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>366</x>
+     <y>554</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>96</x>
+     <y>254</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cancelButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>449</x>
+     <y>554</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>179</x>
+     <y>282</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

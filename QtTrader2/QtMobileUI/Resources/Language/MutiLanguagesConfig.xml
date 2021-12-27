@@ -1,0 +1,8 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<configuration>
+    <Languages>
+        <Item default="false" langId="0x0409" name="English" shortName="ENG" qtLanguageEnum="English" qtCountryEnum="UnitedStates" dir="English(US).json"/>
+        <Item default="false" langId="0x0804" name="简体中文" shortName="CHS" qtLanguageEnum="Chinese" qtCountryEnum="China" dir="Chinese(Mainland).json"/>
+        <Item default="true" langId="0x0404" name="繁體中文" shortName="CHT" qtLanguageEnum="Chinese" qtCountryEnum="China" dir="Chinese(Taiwan).json"/>
+    </Languages>
+</configuration>

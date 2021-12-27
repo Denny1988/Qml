@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='utf-8'?>
+<configuration>
+  <Company name="iExchange" multiMerchant="True"/>
+  <Agreed url="" filePath="" defaultChecked="True"/>
+  <ServerConfigs>
+    <Language shortName="ENG" >
+      <Server server="LIVE" serverName="Live Account" >
+        <Item connectionName="ws3191" connection="10.3.191.1" port="4523" useTraderQuotationServer="true"
+            loginGuestPath="/iExchange/TraderService/Setting/DEM/LoginGuest.txt"
+            openAccountUrl="http://rich1.iexchange.bz/iexchange/NewAccount3/OpenAccount.htm"
+            useBrowser="false"
+            newsUrl=""
+            uploadUrl="http://10.3.192.1/iExchange/AuxService/FileUpLoad/receiver.ashx"/>
+        <Item connectionName="iexdemo" connection="iexdemo.iexchange.bz" port="4523" useTraderQuotationServer="false" loginGuestPath="/iExchange/TraderService/Setting/DEM/LoginGuest.txt"/>
+        <Item connectionName="uat" connection="iexchangeuat.wfgold.com" port="4523" useTraderQuotationServer="false" loginGuestPath="/iExchange/TraderService/Setting/DEM/LoginGuest.txt"/>
+        <Item connectionName="ws3192" connection="10.3.192.1" port="4523" useTraderQuotationServer="true" loginGuestPath="/iExchange/TraderService/Setting/DEM/LoginGuest.txt"/>
+        <Item connectionName="User defined" port="4523" isUseDefined="True" useTraderQuotationServer="false" loginGuestPath="/iExchange/TraderService/Setting/DEM/LoginGuest.txt"/>
+      </Server>
+      <Server server="DEMO" serverName="Demo Account">
+        <Item connectionName="ws3191" connection="10.3.191.1" port="4523" useTraderQuotationServer="true" loginGuestPath="/iExchange/TraderService/Setting/DEM/LoginGuest.txt"/>
+      <Item connectionName="iexdemo" connection="iexdemo.iexchange.bz" port="4523" useTraderQuotationServer="false" loginGuestPath="/iExchange/TraderService/Setting/DEM/LoginGuest.txt"/>
+       <Item connectionName="uat" connection="iexchangeuat.wfgold.com" port="4523" useTraderQuotationServer="false" loginGuestPath="/iExchange/TraderService/Setting/DEM/LoginGuest.txt"/>
+        <Item connectionName="ws3192" connection="10.3.192.1" port="4523" useTraderQuotationServer="true" loginGuestPath="/iExchange/TraderService/Setting/DEM/LoginGuest.txt"/>
+        <Item connectionName="User defined" port="4522" isUseDefined="True" loginGuestPath="/iExchange/TraderService/Setting/DEM/LoginGuest.txt"/>
+      </Server>
+    </Language>
+
+    <Language shortName="CHT">
+      <Server server="LIVE" serverName="真實賬號">
+        <Item connectionName="ws3191" connection="10.3.191.1" port="4523" useTraderQuotationServer="true" loginGuestPath="/iExchange/TraderService/Setting/DEM/LoginGuest.txt"/>
+	<Item connectionName="iexdemo" connection="iexdemo.iexchange.bz" port="4523" useTraderQuotationServer="false" loginGuestPath="/iExchange/TraderService/Setting/DEM/LoginGuest.txt"/>
+        <Item connectionName="匯石" connection="wanexe.iexchange.bz" port="4523" useTraderQuotationServer="true" loginGuestPath="/iExchange/TraderService/Setting/DEM/LoginGuest.txt"/>
+        <Item connectionName="ws3192" connection="10.3.192.1" port="4523" useTraderQuotationServer="true" loginGuestPath="/iExchange/TraderService/Setting/DEM/LoginGuest.txt"/>
+        <Item connectionName="自定義"  port="4523" isUseDefined="True" useTraderQuotationServer="false" loginGuestPath="/iExchange/TraderService/Setting/DEM/LoginGuest.txt"/>
+      </Server>
+      <Server server="DEMO" serverName="模擬賬號">
+        <Item connectionName="ws3191" connection="10.3.191.1" port="4523" useTraderQuotationServer="true" loginGuestPath="/iExchange/TraderService/Setting/DEM/LoginGuest.txt"/>
+        <Item connectionName="永豐" connection="iexchangeuat.wfgold.com" port="4523" useTraderQuotationServer="false" loginGuestPath="/iExchange/TraderService/Setting/DEM/LoginGuest.txt"/>
+        <Item connectionName="自定義"  port="4523" isUseDefined="True" useTraderQuotationServer="false" loginGuestPath="/iExchange/TraderService/Setting/DEM/LoginGuest.txt"/>
+      </Server>
+    </Language>
+
+    <Language shortName="CHS">
+      <Server server="LIVE" serverName="真实账号">
+        <Item connectionName="ws3191" connection="10.3.191.1" port="4523" useTraderQuotationServer="true" loginGuestPath="/iExchange/TraderService/Setting/DEM/LoginGuest.txt"/>
+        <Item connectionName="iexdemo" connection="iexdemo.iexchange.bz" port="4523" useTraderQuotationServer="false" loginGuestPath="/iExchange/TraderService/Setting/DEM/LoginGuest.txt"/>
+        <Item connectionName="汇石" connection="wanexe.iexchange.bz" port="4523" useTraderQuotationServer="true" loginGuestPath="/iExchange/TraderService/Setting/DEM/LoginGuest.txt"/>
+        <Item connectionName="ws3192" connection="10.3.192.1" port="4523" useTraderQuotationServer="true" loginGuestPath="/iExchange/TraderService/Setting/DEM/LoginGuest.txt"/>
+        <Item connectionName="自定义"  port="4523" isUseDefined="True" useTraderQuotationServer="false" loginGuestPath="/iExchange/TraderService/Setting/DEM/LoginGuest.txt"/>
+      </Server>
+      <Server server="DEMO" serverName="模拟账号">
+        <Item connectionName="ws3191" connection="10.3.191.1" port="4523" useTraderQuotationServer="true" loginGuestPath="/iExchange/TraderService/Setting/DEM/LoginGuest.txt"/>
+        <Item connectionName="永丰" connection="iexchangeuat.wfgold.com" port="4523" useTraderQuotationServer="false" loginGuestPath="/iExchange/TraderService/Setting/DEM/LoginGuest.txt"/>
+        <Item connectionName="连接1" connection="do3.iexchange.bz" path="MHL,GDX,PGI,DEM,PHY" port="4522" loginGuestPath="/iExchange/TraderService/Setting/DEM/LoginGuest.txt"/>
+        <Item connectionName="WFuat" connection="iExchangeUAT.wfgold.com"  port="4523"
+        traderQuotationServer="iExchangeUAT.wfgold.com"   traderQuotationServerPort="4529" useTraderQuotationServer="false" loginGuestPath="/iExchange/TraderService/Setting/DEM/LoginGuest.txt"/>
+      </Server>
+    </Language>
+
+    <Language shortName="JPN">
+      <Server server="LIVE" serverName="真実のアカウント" >
+        <Item connectionName="ws3191" connection="10.3.191.1" port="4523" useTraderQuotationServer="true" loginGuestPath="/iExchange/TraderService/Setting/DEM/LoginGuest.txt"/>
+        <Item connectionName="uat" connection="iexchangeuat.wfgold.com" port="4523" useTraderQuotationServer="false" loginGuestPath="/iExchange/TraderService/Setting/DEM/LoginGuest.txt"/>
+        <Item connectionName="取引サーバ" connection="10.3.191.1"  port="4523"  useTraderQuotationServer="true" loginGuestPath="/iExchange/TraderService/Setting/DEM/LoginGuest.txt"/>
+        <Item connectionName="カスタム" port="4523" isUseDefined="True" useTraderQuotationServer="false" loginGuestPath="/iExchange/TraderService/Setting/DEM/LoginGuest.txt"/>
+      </Server>
+    </Language>
+
+  </ServerConfigs>
+</configuration>

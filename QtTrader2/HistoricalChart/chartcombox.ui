@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ChartCombox</class>
+ <widget class="QDialog" name="ChartCombox">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>325</width>
+    <height>318</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QGroupBox" name="CB_Content_GroupBox">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>7</y>
+     <width>285</width>
+     <height>296</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>120</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#CB_Content_GroupBox{
+background-color: rgb(255, 255, 255);
+border:0px;
+}</string>
+   </property>
+   <property name="title">
+    <string/>
+   </property>
+   <widget class="Line" name="CB_line">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>285</width>
+      <height>5</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(98, 192, 255);</string>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="CB_OK_Button">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>264</y>
+      <width>140</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: transparent;
+border:1px solid #cfcfcf;
+border-radius:10px;</string>
+    </property>
+    <property name="text">
+     <string>确认</string>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="CB_Close_Button">
+    <property name="geometry">
+     <rect>
+      <x>145</x>
+      <y>264</y>
+      <width>140</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: transparent;
+border:1px solid #cfcfcf;
+border-radius:10px;</string>
+    </property>
+    <property name="text">
+     <string>关闭</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="CB_Content_Widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>5</y>
+      <width>285</width>
+      <height>260</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,2 @@
+﻿http://iexdemo.iexchange.bz/QTMobile/MerchantList.xml
+http://app.iexchange.bz/QTMobile/MerchantList.xml

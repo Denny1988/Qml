@@ -1,0 +1,698 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A721D590-34C1-453D-8DDC-C94840A62825}</ProjectGuid>
+    <Keyword>Qt4VSv1.0</Keyword>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140_xp</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">UNICODE;WIN32;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_NETWORK_LIB;QT_XML_LIB;QT_XMLPATTERNS_LIB;TRADERBUSINESS_LIB;RUNTIME_OS_WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Business\Model\Trading;.\Business\Model\Computing;.\Business\Model\Setting;.\Communication;.\Common\Enum;.\Business\Model;.\Business;..\decnumber;..\QDecimal;..\QtFramework;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtXmlPatterns;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ProgramDatabase</DebugInformationFormat>
+      <RuntimeLibrary Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</TreatWChar_tAsBuiltInType>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <SubSystem Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Windows</SubSystem>
+      <OutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OutDir)\$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\Lib;..\Win32\Release;$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateDebugInformation>
+      <AdditionalDependencies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">qtmain.lib;Qt5Core.lib;Qt5Network.lib;Qt5Xml.lib;Qt5XmlPatterns.lib;decnumber.lib;qdecimal.lib;QtFramework.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <QtMoc>
+      <InputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(FullPath)</InputFile>
+      <OutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">output</DynamicSource>
+      <ExecutionDescription Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc'ing %(Identity)...</ExecutionDescription>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Business\Model\Trading;.\Business\Model\Computing;.\Business\Model\Setting;.\Communication;.\Common\Enum;.\Business\Model;.\Business;..\decnumber;..\QDecimal;..\QtFramework;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtXmlPatterns;%(AdditionalIncludeDirectories)</IncludePath>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">UNICODE;WIN32;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_NETWORK_LIB;QT_XML_LIB;QT_XMLPATTERNS_LIB;TRADERBUSINESS_LIB;RUNTIME_OS_WIN32;%(PreprocessorDefinitions)</Define>
+      <QTDIR Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)</QTDIR>
+    </QtMoc>
+  </ItemDefinitionGroup>
+  <PropertyGroup Condition="'$(QtMsBuild)'=='' or !Exists('$(QtMsBuild)\qt.targets')">
+    <QtMsBuild>$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
+    <Import Project="$(QtMsBuild)\qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>UNICODE;WIN32;WIN64;QT_DLL;QT_CORE_LIB;QT_NETWORK_LIB;QT_XML_LIB;QT_XMLPATTERNS_LIB;TRADERBUSINESS_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtXmlPatterns;D:\Git\Repos\QtTrader\QtFramework;D:\Git\Repos\QtTrader\QDecimal;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>qtmaind.lib;Qt5Cored.lib;Qt5Networkd.lib;Qt5Xmld.lib;Qt5XmlPatternsd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <QtMoc>
+      <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <IncludePath>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtXmlPatterns;D:\Git\Repos\QtTrader\QtFramework;D:\Git\Repos\QtTrader\QDecimal;%(AdditionalIncludeDirectories)</IncludePath>
+      <Define>UNICODE;WIN32;WIN64;QT_DLL;QT_CORE_LIB;QT_NETWORK_LIB;QT_XML_LIB;QT_XMLPATTERNS_LIB;TRADERBUSINESS_LIB;%(PreprocessorDefinitions)</Define>
+    </QtMoc>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Business\BusinessHelper.cpp" />
+    <ClCompile Include="Business\BusinessManager.cpp" />
+    <ClCompile Include="Business\ComputingManager.cpp" />
+    <ClCompile Include="Business\InitializeManager.cpp" />
+    <ClCompile Include="Business\Model\Computing\ComputingAccount.cpp" />
+    <ClCompile Include="Business\Model\Computing\ComputingInstrument.cpp" />
+    <ClCompile Include="Business\Model\Computing\ComputingOrder.cpp" />
+    <ClCompile Include="Business\Model\Computing\OverridedQuotation.cpp" />
+    <ClCompile Include="Business\Model\Setting\BusinessAccount.cpp" />
+    <ClCompile Include="Business\Model\Setting\BusinessInstrument.cpp" />
+    <ClCompile Include="Business\Model\Setting\InstalmentSetting.cpp" />
+    <ClCompile Include="Business\Model\Setting\PhysicalPaymentDiscountSetting.cpp" />
+    <ClCompile Include="Business\Model\Setting\PlaceSetting.cpp" />
+    <ClCompile Include="Business\Model\Setting\SystemSetting.cpp" />
+    <ClCompile Include="Business\Model\Setting\VolumeNecessary.cpp" />
+    <ClCompile Include="Business\Model\Trading\InstrumentSummary.cpp" />
+    <ClCompile Include="Business\Model\Trading\InventoryData.cpp" />
+    <ClCompile Include="Business\Model\Trading\PendingInventoryData.cpp" />
+    <ClCompile Include="Business\Model\Trading\ShortSellData.cpp" />
+    <ClCompile Include="Business\Model\Trading\TradingOrder.cpp" />
+    <ClCompile Include="Business\Model\Trading\Transaction.cpp" />
+    <ClCompile Include="Business\QuotationManager.cpp" />
+    <ClCompile Include="Business\ServerSourceManager.cpp" />
+    <ClCompile Include="Business\SettingManager.cpp" />
+    <ClCompile Include="Business\TradingManager.cpp" />
+    <ClCompile Include="Common\AppSetting.cpp" />
+    <ClCompile Include="Common\Constants\ButtonPixmapConstants.cpp" />
+    <ClCompile Include="Common\Constants\ColorBrushConstants.cpp" />
+    <ClCompile Include="Common\Constants\CommunicationConstants.cpp" />
+    <ClCompile Include="Common\Constants\DateTimeConstants.cpp" />
+    <ClCompile Include="Common\Constants\FunctionConstants.cpp" />
+    <ClCompile Include="Common\Constants\LogKeyConstants.cpp" />
+    <ClCompile Include="Common\Constants\MarginConstants.cpp" />
+    <ClCompile Include="Common\Constants\MethodNameConstants.cpp" />
+    <ClCompile Include="Common\Constants\NumberConstants.cpp" />
+    <ClCompile Include="Common\Constants\QuotationConstants.cpp" />
+    <ClCompile Include="Common\Constants\ViewColumnsConstants.cpp" />
+    <ClCompile Include="Common\Constants\ViewObjectNameConstants.cpp" />
+    <ClCompile Include="Common\CustomerSetting.cpp" />
+    <ClCompile Include="Common\Encrypt\AesCipher.cpp" />
+    <ClCompile Include="Common\Encrypt\Base64.cpp" />
+    <ClCompile Include="Common\Encrypt\md5.cpp" />
+    <ClCompile Include="Common\GuidMappingManager.cpp" />
+    <ClCompile Include="Common\LoginSetting.cpp" />
+    <ClCompile Include="Common\Result\ChartCountResult.cpp" />
+    <ClCompile Include="Common\Result\ChartXmlDataResult.cpp" />
+    <ClCompile Include="Common\Result\InvokeResult.cpp" />
+    <ClCompile Include="Common\Result\PlaceResult.cpp" />
+    <ClCompile Include="Common\Result\UpdatePriceAlertResult.cpp" />
+    <ClCompile Include="Common\SignalForwarder.cpp" />
+    <ClCompile Include="Common\StatusManager.cpp" />
+    <ClCompile Include="Common\ThreadManager.cpp" />
+    <ClCompile Include="Common\TimerManager.cpp" />
+    <ClCompile Include="Common\TraderBaseInfo.cpp" />
+    <ClCompile Include="Common\UtcTimeManager.cpp" />
+    <ClCompile Include="Common\Util\pricehelper.cpp" />
+    <ClCompile Include="Communication\Heartbeater.cpp" />
+    <ClCompile Include="Communication\Package.cpp" />
+    <ClCompile Include="Communication\SocketWrapper.cpp" />
+    <ClCompile Include="Communication\SSLChannel.cpp" />
+    <ClCompile Include="Service\ChartService.cpp" />
+    <ClCompile Include="Service\ProvisionalServiceManager.cpp" />
+    <ClCompile Include="Service\QuotationService.cpp" />
+    <ClCompile Include="Service\ReportService.cpp" />
+    <ClCompile Include="Service\ServiceManager.cpp" />
+    <ClCompile Include="Service\TradeService.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Communication\Heartbeater.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing Heartbeater.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Moc%27ing Heartbeater.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_WINDLL  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB  "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I$(QTDIR)\include\QtANGLE" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I$(QTDIR)\include\ActiveQt" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing Heartbeater.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Moc%27ing Heartbeater.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_USING_V110_SDK71_ -D_WINDLL  "-I.\Business\Model\Trading" "-I.\Business\Model\Computing" "-I.\Business\Model\Setting" "-I.\Communication" "-I.\Common\Enum" "-I.\Business\Model" "-I.\Business" "-I.\..\decnumber" "-I.\..\QDecimal" "-I.\..\QtFramework" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB  "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I$(INHERIT)\." "-I$(QTDIR)\include\QtANGLE" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+    </CustomBuild>
+    <ClInclude Include="Business\BusinessHelper.h" />
+    <CustomBuild Include="Business\BusinessManager.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing BusinessManager.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Moc%27ing BusinessManager.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_WINDLL  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB  "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I$(QTDIR)\include\QtANGLE" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I$(QTDIR)\include\ActiveQt" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing BusinessManager.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Moc%27ing BusinessManager.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_USING_V110_SDK71_ -D_WINDLL  "-I.\Business\Model\Trading" "-I.\Business\Model\Computing" "-I.\Business\Model\Setting" "-I.\Communication" "-I.\Common\Enum" "-I.\Business\Model" "-I.\Business" "-I.\..\decnumber" "-I.\..\QDecimal" "-I.\..\QtFramework" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB  "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I$(INHERIT)\." "-I$(QTDIR)\include\QtANGLE" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+    </CustomBuild>
+    <ClInclude Include="Business\ComputingManager.h" />
+    <ClInclude Include="Business\InitializeManager.h" />
+    <ClInclude Include="Business\Model\Chat.h" />
+    <ClInclude Include="Business\Model\Computing\ChangeFund.h" />
+    <ClInclude Include="Business\Model\Computing\ComputingAccount.h" />
+    <ClInclude Include="Business\Model\Computing\ComputingInstrument.h" />
+    <ClInclude Include="Business\Model\Computing\ComputingOrder.h" />
+    <ClInclude Include="Business\Model\Computing\ComputingResult.h" />
+    <ClInclude Include="Business\Model\Computing\DemandComputing.h" />
+    <ClInclude Include="Business\Model\Computing\OverridedQuotation.h" />
+    <ClInclude Include="Business\Model\IInstantMessage.h" />
+    <ClInclude Include="Business\Model\InitialQuotation.h" />
+    <ClInclude Include="Business\Model\Log.h" />
+    <ClInclude Include="Business\Model\News.h" />
+    <ClInclude Include="Business\Model\PriceAlert.h" />
+    <ClInclude Include="Business\Model\Server\Account.h" />
+    <ClInclude Include="Business\Model\Server\BOBetType.h" />
+    <ClInclude Include="Business\Model\Server\BOPolicy.h" />
+    <ClInclude Include="Business\Model\Server\BOPolicyDetail.h" />
+    <ClInclude Include="Business\Model\Server\CounterParty.h" />
+    <ClInclude Include="Business\Model\Server\Customer.h" />
+    <ClInclude Include="Business\Model\Server\DealingPolicyDetail.h" />
+    <ClInclude Include="Business\Model\Server\DeliveryCharge.h" />
+    <ClInclude Include="Business\Model\Server\DeliverySpecificationDetail.h" />
+    <ClInclude Include="Business\Model\Server\InstalmentPolicy.h" />
+    <ClInclude Include="Business\Model\Server\InstalmentPolicyDetail.h" />
+    <ClInclude Include="Business\Model\Server\Instrument.h" />
+    <ClInclude Include="Business\Model\Server\InstrumentUnit.h" />
+    <ClInclude Include="Business\Model\Server\Organization.h" />
+    <ClInclude Include="Business\Model\Server\PhysicalPaymentDiscount.h" />
+    <ClInclude Include="Business\Model\Server\PhysicalPaymentDiscountDetail.h" />
+    <ClInclude Include="Business\Model\Server\QuotePolicy.h" />
+    <ClInclude Include="Business\Model\Server\QuotePolicyDetail.h" />
+    <ClInclude Include="Business\Model\Server\SystemParameter.h" />
+    <ClInclude Include="Business\Model\Server\TradePolicyDetail.h" />
+    <ClInclude Include="Business\Model\Server\VolumeNecessary.h" />
+    <ClInclude Include="Business\Model\Server\VolumeNecessaryDetail.h" />
+    <ClInclude Include="Business\Model\Setting\BOPolicySetting.h" />
+    <ClInclude Include="Business\Model\Setting\BusinessAccount.h" />
+    <ClInclude Include="Business\Model\Setting\BusinessInstrument.h" />
+    <ClInclude Include="Business\Model\Setting\CalculateQuotationDefaultSetting.h" />
+    <ClInclude Include="Business\Model\Setting\CalculateSetting.h" />
+    <ClInclude Include="Business\Model\Setting\Currency.h" />
+    <ClInclude Include="Business\Model\Setting\CurrencyRate.h" />
+    <ClInclude Include="Business\Model\Setting\DeliveryCharge.h" />
+    <ClInclude Include="Business\Model\Setting\DeliveryHoliday.h" />
+    <ClInclude Include="Business\Model\Setting\DeliverySpecificationDetail.h" />
+    <ClInclude Include="Business\Model\Setting\InstalmentSetting.h" />
+    <ClInclude Include="Business\Model\Setting\InstalmentSettingDetail.h" />
+    <ClInclude Include="Business\Model\Setting\InstrumentColumnSetting.h" />
+    <ClInclude Include="Business\Model\Setting\InstrumentParameter.h" />
+    <ClInclude Include="Business\Model\Setting\InterestRate.h" />
+    <ClInclude Include="Business\Model\Setting\LeverageSetting.h" />
+    <ClInclude Include="Business\Model\Setting\LotSetting.h" />
+    <ClInclude Include="Business\Model\Setting\MarginSetting.h" />
+    <ClInclude Include="Business\Model\Setting\MovePipsInfoSetting.h" />
+    <ClInclude Include="Business\Model\Setting\OpenOrderListColumnSetting.h" />
+    <ClInclude Include="Business\Model\Setting\PaymentInstructionIntegralitySetting.h" />
+    <ClInclude Include="Business\Model\Setting\PhysicalPaymentDiscountSetting.h" />
+    <ClInclude Include="Business\Model\Setting\PhysicalPaymentDiscountSettingDetail.h" />
+    <ClInclude Include="Business\Model\Setting\PlaceSetting.h" />
+    <ClInclude Include="Business\Model\Setting\PlaceSettingDetail.h" />
+    <ClInclude Include="Business\Model\Setting\ScrapInstrument.h" />
+    <ClInclude Include="Business\Model\Setting\SettingDataBase.h" />
+    <ClInclude Include="Business\Model\Setting\SystemSetting.h" />
+    <ClInclude Include="Business\Model\Setting\TradeDay.h" />
+    <ClInclude Include="Business\Model\Setting\TradingListColumnsVisibility.h" />
+    <ClInclude Include="Business\Model\Setting\VolumeNecessary.h" />
+    <ClInclude Include="Business\Model\Setting\VolumeNecessaryDetail.h" />
+    <ClInclude Include="Business\Model\Trading\DeliveryRequest.h" />
+    <ClInclude Include="Business\Model\Trading\DeliveryRequestOrderRelation.h" />
+    <ClInclude Include="Business\Model\Trading\Fund.h" />
+    <ClInclude Include="Business\Model\Trading\InstrumentAccountSummary.h" />
+    <ClInclude Include="Business\Model\Trading\InstrumentSummary.h" />
+    <ClInclude Include="Business\Model\Trading\InterestFreeDay.h" />
+    <ClInclude Include="Business\Model\Trading\InventoryData.h" />
+    <ClInclude Include="Business\Model\Trading\MarketingGroupFund.h" />
+    <ClInclude Include="Business\Model\Trading\OrderInstalmentData.h" />
+    <ClInclude Include="Business\Model\Trading\OrderRelation.h" />
+    <ClInclude Include="Business\Model\Trading\PendingInventoryData.h" />
+    <ClInclude Include="Business\Model\Trading\ScrapDeposit.h" />
+    <ClInclude Include="Business\Model\Trading\ShortSellData.h" />
+    <ClInclude Include="Business\Model\Trading\SubFund.h" />
+    <ClInclude Include="Business\Model\Trading\TradingOrder.h" />
+    <ClInclude Include="Business\Model\Trading\Transaction.h" />
+    <ClInclude Include="Business\QuotationManager.h" />
+    <ClInclude Include="Business\ServerSourceManager.h" />
+    <ClInclude Include="Business\SettingManager.h" />
+    <ClInclude Include="Business\TradingManager.h" />
+    <ClInclude Include="Common\AppSetting.h" />
+    <ClInclude Include="Common\BaseWidgetStyle.h" />
+    <ClInclude Include="Common\Constants\ButtonPixmapConstants.h" />
+    <ClInclude Include="Common\Constants\ColorBrushConstants.h" />
+    <ClInclude Include="Common\Constants\CommunicationConstants.h" />
+    <ClInclude Include="Common\Constants\DateTimeConstants.h" />
+    <ClInclude Include="Common\Constants\FunctionConstants.h" />
+    <ClInclude Include="Common\Constants\LogKeyConstants.h" />
+    <ClInclude Include="Common\Constants\MarginConstants.h" />
+    <ClInclude Include="Common\Constants\MethodNameConstants.h" />
+    <ClInclude Include="Common\Constants\NumberConstants.h" />
+    <ClInclude Include="Common\Constants\QuotationConstants.h" />
+    <ClInclude Include="Common\Constants\ViewColumnsConstants.h" />
+    <ClInclude Include="Common\Constants\ViewObjectNameConstants.h" />
+    <ClInclude Include="Common\CustomerSetting.h" />
+    <ClInclude Include="Common\EncryptHelper.h" />
+    <ClInclude Include="Common\Encrypt\AesCipher.h" />
+    <ClInclude Include="Common\Encrypt\Base64.h" />
+    <ClInclude Include="Common\Encrypt\md5.h" />
+    <ClInclude Include="Common\Enum\AccountEnum.h" />
+    <ClInclude Include="Common\Enum\AccountOrderTypeEnum.h" />
+    <ClInclude Include="Common\Enum\BOEnum.h" />
+    <ClInclude Include="Common\Enum\CancelReasonEnum.h" />
+    <ClInclude Include="Common\Enum\CommonEnum.h" />
+    <ClInclude Include="Common\Enum\CommunicationEnum.h" />
+    <ClInclude Include="Common\Enum\FrameworkEnum.h" />
+    <ClInclude Include="Common\Enum\InformationCenterEnum.h" />
+    <ClInclude Include="Common\Enum\InstalmentEnum.h" />
+    <ClInclude Include="Common\Enum\InstrumentEnum.h" />
+    <ClInclude Include="Common\Enum\LogLevelEnum.h" />
+    <ClInclude Include="Common\Enum\MarginEnum.h" />
+    <ClInclude Include="Common\Enum\MarketInfoTypeEnum.h" />
+    <ClInclude Include="Common\Enum\PhysicalEnum.h" />
+    <ClInclude Include="Common\Enum\PlaceEnum.h" />
+    <ClInclude Include="Common\Enum\PriceAlertEnum.h" />
+    <ClInclude Include="Common\Enum\QuotationMenuTypeEnum.h" />
+    <ClInclude Include="Common\Enum\SettingOptionEnum.h" />
+    <ClInclude Include="Common\Enum\StatusEnum.h" />
+    <ClInclude Include="Common\Enum\TimeOptionInTraderLogEnum.h" />
+    <ClInclude Include="Common\Enum\TradingListNameEnum.h" />
+    <ClInclude Include="Common\Enum\TradingOrderEnum.h" />
+    <ClInclude Include="Common\Enum\TransactionEnum.h" />
+    <ClInclude Include="Common\Enum\TransactionErrorEnum.h" />
+    <ClInclude Include="Common\Enum\UIEnum.h" />
+    <CustomBuild Include="Common\Result\ChartCountResult.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing ChartCountResult.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Moc%27ing ChartCountResult.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_WINDLL  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB  "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I$(QTDIR)\include\QtANGLE" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I$(QTDIR)\include\ActiveQt" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing ChartCountResult.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Moc%27ing ChartCountResult.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_USING_V110_SDK71_ -D_WINDLL  "-I.\Business\Model\Trading" "-I.\Business\Model\Computing" "-I.\Business\Model\Setting" "-I.\Communication" "-I.\Common\Enum" "-I.\Business\Model" "-I.\Business" "-I.\..\decnumber" "-I.\..\QDecimal" "-I.\..\QtFramework" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB  "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I$(INHERIT)\." "-I$(QTDIR)\include\QtANGLE" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+    </CustomBuild>
+    <CustomBuild Include="Common\Result\ChartXmlDataResult.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing ChartXmlDataResult.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Moc%27ing ChartXmlDataResult.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_WINDLL  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB  "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I$(QTDIR)\include\QtANGLE" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I$(QTDIR)\include\ActiveQt" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing ChartXmlDataResult.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Moc%27ing ChartXmlDataResult.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_USING_V110_SDK71_ -D_WINDLL  "-I.\Business\Model\Trading" "-I.\Business\Model\Computing" "-I.\Business\Model\Setting" "-I.\Communication" "-I.\Common\Enum" "-I.\Business\Model" "-I.\Business" "-I.\..\decnumber" "-I.\..\QDecimal" "-I.\..\QtFramework" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB  "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I$(INHERIT)\." "-I$(QTDIR)\include\QtANGLE" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+    </CustomBuild>
+    <CustomBuild Include="Common\Result\InvokeResult.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing InvokeResult.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Moc%27ing InvokeResult.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_WINDLL  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB  "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I$(QTDIR)\include\QtANGLE" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I$(QTDIR)\include\ActiveQt" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing InvokeResult.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Moc%27ing InvokeResult.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_USING_V110_SDK71_ -D_WINDLL  "-I.\Business\Model\Trading" "-I.\Business\Model\Computing" "-I.\Business\Model\Setting" "-I.\Communication" "-I.\Common\Enum" "-I.\Business\Model" "-I.\Business" "-I.\..\decnumber" "-I.\..\QDecimal" "-I.\..\QtFramework" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB  "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I$(INHERIT)\." "-I$(QTDIR)\include\QtANGLE" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+    </CustomBuild>
+    <CustomBuild Include="Common\Result\PlaceResult.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing PlaceResult.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Moc%27ing PlaceResult.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_WINDLL  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB  "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I$(QTDIR)\include\QtANGLE" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I$(QTDIR)\include\ActiveQt" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing PlaceResult.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Moc%27ing PlaceResult.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_USING_V110_SDK71_ -D_WINDLL  "-I.\Business\Model\Trading" "-I.\Business\Model\Computing" "-I.\Business\Model\Setting" "-I.\Communication" "-I.\Common\Enum" "-I.\Business\Model" "-I.\Business" "-I.\..\decnumber" "-I.\..\QDecimal" "-I.\..\QtFramework" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB  "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I$(INHERIT)\." "-I$(QTDIR)\include\QtANGLE" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+    </CustomBuild>
+    <ClInclude Include="Common\GuidMappingManager.h" />
+    <ClInclude Include="Common\LogHelper.h" />
+    <ClInclude Include="Common\LoginSetting.h" />
+    <ClInclude Include="Common\Parameter.h" />
+    <ClInclude Include="Common\Price.h" />
+    <ClInclude Include="Common\Result\Result.h" />
+    <CustomBuild Include="Common\Result\UpdatePriceAlertResult.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing UpdatePriceAlertResult.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Moc%27ing UpdatePriceAlertResult.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_WINDLL  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB  "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I$(QTDIR)\include\QtANGLE" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I$(QTDIR)\include\ActiveQt" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing UpdatePriceAlertResult.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Moc%27ing UpdatePriceAlertResult.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_USING_V110_SDK71_ -D_WINDLL  "-I.\Business\Model\Trading" "-I.\Business\Model\Computing" "-I.\Business\Model\Setting" "-I.\Communication" "-I.\Common\Enum" "-I.\Business\Model" "-I.\Business" "-I.\..\decnumber" "-I.\..\QDecimal" "-I.\..\QtFramework" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB  "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I$(INHERIT)\." "-I$(QTDIR)\include\QtANGLE" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+    </CustomBuild>
+    <CustomBuild Include="Common\SignalForwarder.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing SignalForwarder.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Moc%27ing SignalForwarder.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_WINDLL  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB  "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I$(QTDIR)\include\QtANGLE" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I$(QTDIR)\include\ActiveQt" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing SignalForwarder.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Moc%27ing SignalForwarder.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_USING_V110_SDK71_ -D_WINDLL  "-I.\Business\Model\Trading" "-I.\Business\Model\Computing" "-I.\Business\Model\Setting" "-I.\Communication" "-I.\Common\Enum" "-I.\Business\Model" "-I.\Business" "-I.\..\decnumber" "-I.\..\QDecimal" "-I.\..\QtFramework" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB  "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I$(INHERIT)\." "-I$(QTDIR)\include\QtANGLE" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+    </CustomBuild>
+    <CustomBuild Include="Common\StatusManager.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing StatusManager.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Moc%27ing StatusManager.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_WINDLL  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB  "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I$(QTDIR)\include\QtANGLE" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I$(QTDIR)\include\ActiveQt" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing StatusManager.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Moc%27ing StatusManager.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_USING_V110_SDK71_ -D_WINDLL  "-I.\Business\Model\Trading" "-I.\Business\Model\Computing" "-I.\Business\Model\Setting" "-I.\Communication" "-I.\Common\Enum" "-I.\Business\Model" "-I.\Business" "-I.\..\decnumber" "-I.\..\QDecimal" "-I.\..\QtFramework" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB  "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I$(INHERIT)\." "-I$(QTDIR)\include\QtANGLE" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+    </CustomBuild>
+    <ClInclude Include="Common\Struct\CommonStruct.h" />
+    <ClInclude Include="Common\Struct\InformationStruct.h" />
+    <ClInclude Include="Common\Struct\InstrumentStateStruct.h" />
+    <ClInclude Include="Common\Struct\LoginSettingStruct.h" />
+    <ClInclude Include="Common\Struct\PhysicalStruct.h" />
+    <ClInclude Include="Common\Struct\PlacingStruct.h" />
+    <ClInclude Include="Common\Struct\SettingStruct.h" />
+    <CustomBuild Include="Common\ThreadManager.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing ThreadManager.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Moc%27ing ThreadManager.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_WINDLL  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB  "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I$(QTDIR)\include\QtANGLE" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I$(QTDIR)\include\ActiveQt" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing ThreadManager.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Moc%27ing ThreadManager.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_USING_V110_SDK71_ -D_WINDLL  "-I.\Business\Model\Trading" "-I.\Business\Model\Computing" "-I.\Business\Model\Setting" "-I.\Communication" "-I.\Common\Enum" "-I.\Business\Model" "-I.\Business" "-I.\..\decnumber" "-I.\..\QDecimal" "-I.\..\QtFramework" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB  "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I$(INHERIT)\." "-I$(QTDIR)\include\QtANGLE" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+    </CustomBuild>
+    <CustomBuild Include="Common\TimerManager.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing TimerManager.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Moc%27ing TimerManager.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_WINDLL  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB  "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I$(QTDIR)\include\QtANGLE" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I$(QTDIR)\include\ActiveQt" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing TimerManager.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Moc%27ing TimerManager.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_USING_V110_SDK71_ -D_WINDLL  "-I.\Business\Model\Trading" "-I.\Business\Model\Computing" "-I.\Business\Model\Setting" "-I.\Communication" "-I.\Common\Enum" "-I.\Business\Model" "-I.\Business" "-I.\..\decnumber" "-I.\..\QDecimal" "-I.\..\QtFramework" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB  "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I$(INHERIT)\." "-I$(QTDIR)\include\QtANGLE" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+    </CustomBuild>
+    <ClInclude Include="Common\TraderBaseInfo.h" />
+    <CustomBuild Include="Common\UtcTimeManager.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing UtcTimeManager.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Moc%27ing UtcTimeManager.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_WINDLL  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB  "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I$(QTDIR)\include\QtANGLE" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I$(QTDIR)\include\ActiveQt" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing UtcTimeManager.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Moc%27ing UtcTimeManager.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_USING_V110_SDK71_ -D_WINDLL  "-I.\Business\Model\Trading" "-I.\Business\Model\Computing" "-I.\Business\Model\Setting" "-I.\Communication" "-I.\Common\Enum" "-I.\Business\Model" "-I.\Business" "-I.\..\decnumber" "-I.\..\QDecimal" "-I.\..\QtFramework" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB  "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I$(INHERIT)\." "-I$(QTDIR)\include\QtANGLE" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+    </CustomBuild>
+    <ClInclude Include="Common\Util\Convert_Common.h" />
+    <ClInclude Include="Common\Util\PriceHelper.h" />
+    <ClInclude Include="Communication\Package.h" />
+    <CustomBuild Include="Communication\SocketWrapper.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing SocketWrapper.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_WINDLL  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Moc%27ing SocketWrapper.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I$(QTDIR)\include\QtANGLE" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I$(QTDIR)\include\ActiveQt" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing SocketWrapper.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_USING_V110_SDK71_ -D_WINDLL  "-I.\Business\Model\Trading" "-I.\Business\Model\Computing" "-I.\Business\Model\Setting" "-I.\Communication" "-I.\Common\Enum" "-I.\Business\Model" "-I.\Business" "-I.\..\decnumber" "-I.\..\QDecimal" "-I.\..\QtFramework" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Moc%27ing SocketWrapper.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I$(INHERIT)\." "-I$(QTDIR)\include\QtANGLE" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+    </CustomBuild>
+    <CustomBuild Include="Communication\SSLChannel.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);$(QTDIR)\bin\moc.exe;%(FullPath);$(QTDIR)\bin\moc.exe;%(FullPath);$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath);$(QTDIR)\bin\moc.exe;%(FullPath);$(QTDIR)\bin\moc.exe;%(FullPath);$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing SSLChannel.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Moc%27ing SSLChannel.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_WINDLL  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB  "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I$(QTDIR)\include\QtANGLE" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I$(QTDIR)\include\ActiveQt" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);$(QTDIR)\bin\moc.exe;%(FullPath);$(QTDIR)\bin\moc.exe;%(FullPath);$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath);$(QTDIR)\bin\moc.exe;%(FullPath);$(QTDIR)\bin\moc.exe;%(FullPath);$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing SSLChannel.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Moc%27ing SSLChannel.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_USING_V110_SDK71_ -D_WINDLL  "-I.\Business\Model\Trading" "-I.\Business\Model\Computing" "-I.\Business\Model\Setting" "-I.\Communication" "-I.\Common\Enum" "-I.\Business\Model" "-I.\Business" "-I.\..\decnumber" "-I.\..\QDecimal" "-I.\..\QtFramework" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB  "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I$(INHERIT)\." "-I$(QTDIR)\include\QtANGLE" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+    </CustomBuild>
+    <CustomBuild Include="Service\ChartService.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing ChartService.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Moc%27ing ChartService.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_WINDLL  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB  "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I$(QTDIR)\include\QtANGLE" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I$(QTDIR)\include\ActiveQt" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing ChartService.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Moc%27ing ChartService.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_USING_V110_SDK71_ -D_WINDLL  "-I.\Business\Model\Trading" "-I.\Business\Model\Computing" "-I.\Business\Model\Setting" "-I.\Communication" "-I.\Common\Enum" "-I.\Business\Model" "-I.\Business" "-I.\..\decnumber" "-I.\..\QDecimal" "-I.\..\QtFramework" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB  "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I$(INHERIT)\." "-I$(QTDIR)\include\QtANGLE" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="Service\ProvisionalServiceManager.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing ProvisionalServiceManager.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_WINDLL  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Moc%27ing ProvisionalServiceManager.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I$(QTDIR)\include\QtANGLE" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I$(QTDIR)\include\ActiveQt" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing ProvisionalServiceManager.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_USING_V110_SDK71_ -D_WINDLL  "-I.\Business\Model\Trading" "-I.\Business\Model\Computing" "-I.\Business\Model\Setting" "-I.\Communication" "-I.\Common\Enum" "-I.\Business\Model" "-I.\Business" "-I.\..\decnumber" "-I.\..\QDecimal" "-I.\..\QtFramework" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Moc%27ing ProvisionalServiceManager.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I$(INHERIT)\." "-I$(QTDIR)\include\QtANGLE" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+    </CustomBuild>
+    <CustomBuild Include="Service\QuotationService.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing QuotationService.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Moc%27ing QuotationService.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_WINDLL  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB  "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I$(QTDIR)\include\QtANGLE" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I$(QTDIR)\include\ActiveQt" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing QuotationService.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Moc%27ing QuotationService.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_USING_V110_SDK71_ -D_WINDLL  "-I.\Business\Model\Trading" "-I.\Business\Model\Computing" "-I.\Business\Model\Setting" "-I.\Communication" "-I.\Common\Enum" "-I.\Business\Model" "-I.\Business" "-I.\..\decnumber" "-I.\..\QDecimal" "-I.\..\QtFramework" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB  "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I$(INHERIT)\." "-I$(QTDIR)\include\QtANGLE" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="Service\ReportService.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing ReportService.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Moc%27ing ReportService.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_WINDLL  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB  "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I$(QTDIR)\include\QtANGLE" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I$(QTDIR)\include\ActiveQt" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing ReportService.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Moc%27ing ReportService.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_USING_V110_SDK71_ -D_WINDLL  "-I.\Business\Model\Trading" "-I.\Business\Model\Computing" "-I.\Business\Model\Setting" "-I.\Communication" "-I.\Common\Enum" "-I.\Business\Model" "-I.\Business" "-I.\..\decnumber" "-I.\..\QDecimal" "-I.\..\QtFramework" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB  "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I$(INHERIT)\." "-I$(QTDIR)\include\QtANGLE" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+    </CustomBuild>
+    <CustomBuild Include="Service\ServiceManager.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing ServiceManager.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Moc%27ing ServiceManager.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_WINDLL  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB  "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I$(QTDIR)\include\QtANGLE" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I$(QTDIR)\include\ActiveQt" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing ServiceManager.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Moc%27ing ServiceManager.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_USING_V110_SDK71_ -D_WINDLL  "-I.\Business\Model\Trading" "-I.\Business\Model\Computing" "-I.\Business\Model\Setting" "-I.\Communication" "-I.\Common\Enum" "-I.\Business\Model" "-I.\Business" "-I.\..\decnumber" "-I.\..\QDecimal" "-I.\..\QtFramework" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB  "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I$(INHERIT)\." "-I$(QTDIR)\include\QtANGLE" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+    </CustomBuild>
+    <CustomBuild Include="Service\TradeService.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing TradeService.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Moc%27ing TradeService.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_WINDLL  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB  "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I$(QTDIR)\include\QtANGLE" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I$(QTDIR)\include\ActiveQt" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing TradeService.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Moc%27ing TradeService.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DTRADERBUSINESS_LIB -D_USING_V110_SDK71_ -D_WINDLL  "-I.\Business\Model\Trading" "-I.\Business\Model\Computing" "-I.\Business\Model\Setting" "-I.\Communication" "-I.\Common\Enum" "-I.\Business\Model" "-I.\Business" "-I.\..\decnumber" "-I.\..\QDecimal" "-I.\..\QtFramework" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtXmlPatterns"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_XMLPATTERNS_LIB -DQT_MULTIMEDIA_LIB -DQT_OPENGL_LIB  "-I$(IEXCHANGE3TEAM)\Chart\QtFramework" "-I$(IEXCHANGE3TEAM)\Chart\HistoricalChart" "-I.\QDecimal" "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtConcurrent" "-I$(QTDIR)\include\QtXml" "-I.\UI\Languages" "-I$(INHERIT)\." "-I$(QTDIR)\include\QtANGLE" "-I.\Business" "-I.\Business\Model" "-I.\Common\Enum" "-I.\Communication" "-I$(QTDIR)\include\QtXmlPatterns" "-I.\PlacingModel" "-I.\Business\Model\Setting" "-I.\Business\Model\Computing" "-I.\Business\Model\Trading" "-I.\View\Login" "-I.\View\MainWindow" "-I.\Placing\UIModel" "-I.\Placing\PlacingUI\Ui" "-I.\View\TradingOrder\PhysicalStock" "-I.\View\TradingOrder\OpenOrder" "-I.\View\AccountUI" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include\QtOpenGL"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <ClInclude Include="traderbusiness_global.h" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties MocDir=".\GeneratedFiles\$(ConfigurationName)" UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" lupdateOptions="" lupdateOnBuild="0" lreleaseOptions="" Qt5Version_x0020_Win32="Qt5.7" MocOptions="" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

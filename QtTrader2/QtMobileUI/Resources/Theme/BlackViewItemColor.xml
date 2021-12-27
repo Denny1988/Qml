@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ColorSettings>
+  <Item key="System_Color"  value="White"/>
+  <Item key="System_BackgroundColor"  value="Black"/>
+  <Item key="QuotationPage_AccountButton_Background"  value="#585657"/>
+  <Item key="QuotationItem_NoChange_Color"  value="White"/>
+  <Item key="MainMenuTabButton_TopLine_Color"  value="#6a6a6a"/>
+  <Item key="MainMenuTabButton_Color"  value="White"/> 
+  <Item key="MainMenuTabButton_BottomLine_Color"  value="Black"/>  
+  <Item key="MainMenuTabButton_Click_Color"  value="#ff3a20"/>
+  <Item key="QuotationListWidget_SmallArrowButton_PngName"  value="SmallArrowForBlack.png"/>
+  <Item key="TradingPage_UserButton_PngName"  value="UserForBlack.png"/>
+  <Item key="TradingPage_OpenOrderButton_PngName"  value="OpenOrder.png"/>
+  <Item key="TradingPage_TodayExecuteButton_PngName"  value="TodayExecute.png"/>
+  <Item key="TradingPage_PendingButton_PngName"  value="Pending.png"/>
+  <Item key="TradingPage_OrderSearchButton_PngName"  value="OrderSearch.png"/>
+  <Item key="TradingPage_MarginButton_PngName"  value="Margin.png"/>
+  <Item key="TradingPage_ReportButton_PngName"  value="Report.png"/>
+  <Item key="TradingPage_UserCenterButton_PngName"  value="UserCenter.png"/>
+  <Item key="TradingPage_FollowTradeButton_PngName"  value="FollowTrade.png"/>
+  <Item key="SystemSettingPage_ArrowButton_PngName"  value="ArrowForBlack.png"/>
+  <Item key="ReportPage_ButtonClick_Background"  value="#eaeaea"/>
+  <Item key="ReportPage_ButtonClick_Color"  value="#000000"/>
+  <Item key="ReportPage_ButtonUnClick_Background"  value="#000000"/>
+  <Item key="ReportPage_ButtonUnClick_Color"  value="#ffffff"/>
+  <Item key="ReportPage_ButtonUnClick_BorderColor"  value="#eaeaea"/>
+  <Item key="OpenOrderListHeaderWidget_ArrowOpenButton_PngName"  value="ArrowOpenForBlack.png"/>
+  <Item key="OpenOrderListHeaderWidget_ArrowCloseButton_PngName"  value="ArrowCloseForBlack.png"/>
+  <Item key="TodayPending_HeaderWidget_Background"  value="#707070"/>
+<Item key="PlacingOrder" value="#5059ff"/>
+  <Item key="PlacedOrder" value="#1fdc1f"/>
+  <Item key="ExecutedOrder" value="White"/>
+  <Item key="CancelOrder" value="gray"/>
+  <Item key="DeleteOrder" value="red"/>
+  <Item key="ModifyWidget_DisableBorderColor"  value="#616161"/>
+  <Item key="QML_TitleBarBgColor"  value="#496963"/>
+  <Item key="QML_TitleBarColor"  value="white"/>
+  <Item key="PositiveNumber" value="White"/>
+  <Item key="NegativeNumber" value="#ff212f"/>
+</ColorSettings>

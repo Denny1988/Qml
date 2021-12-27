@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout android:layout_width="match_parent"
+                  android:layout_height="40dp"
+                  android:background="#496963">
+        <ImageView
+            android:id="@+id/goBackImage"
+            android:layout_width="30dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:layout_alignParentLeft ="true"
+            android:src="@drawable/back"
+            />
+
+        <TextView
+            android:id="@+id/goBackButton"
+            android:layout_width="65dp"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf ="@id/goBackImage"
+            android:layout_weight="1"
+            android:color="#ffffff"
+            android:textSize="18sp"
+            android:clickable="true"
+            android:gravity="center_vertical|left"
+            android:layout_centerVertical="true"
+            android:textStyle="bold"
+            android:text="返回"/>
+
+        <TextView android:id="@+id/titleText"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft ="true"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:color="#ffffff"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text=""/>
+    </RelativeLayout>
+
+    <WebView
+        android:id="@+id/webView1"
+        android:layout_below="@+id/text_endLoading"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+</LinearLayout>

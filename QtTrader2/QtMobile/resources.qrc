@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/main.qml</file>
+        <file>Resources/Config.xml</file>
+        <file>Resources/EnableGroupUserUrl.txt</file>
+        <file>Resources/Merchant.txt</file>
+        <file>Resources/Images/Startup.gif</file>
+        <file>qml/SplashScreen.qml</file>
+        <file>Resources/Images/background.png</file>
+        <file>qml/LoginPage.qml</file>
+        <file>qml/MainPage.qml</file>
+        <file>qml/Login.qml</file>
+        <file>qml/LoginForm.ui.qml</file>
+    </qresource>
+</RCC>
